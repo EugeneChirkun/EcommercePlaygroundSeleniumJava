@@ -5,20 +5,20 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage extends AbstractPage{
+public class AccountCreatedPage extends AbstractPage{
     @FindBy(xpath = "//*[contains(text(),'Continue')]")
     private WebElement continueBtn;
+    @FindBy(xpath = "//h1[@class='page-title my-3']")
+    private WebElement successMessage;
 
-
-
-    public LoginPage(WebDriver driver) {
+    public AccountCreatedPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(this.driver, this);
     }
 
     @Override
-    public LoginPage openPage() {
-        driver.navigate().to(ProjectData.LOGIN_PAGE.getUrl());
+    public AccountCreatedPage openPage() {
+        driver.navigate().to(ProjectData.ACCOUNT_CREATED_PAGE.getUrl());
         return this;
     }
 
