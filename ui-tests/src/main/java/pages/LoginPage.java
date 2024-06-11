@@ -11,6 +11,15 @@ public class LoginPage extends AbstractPage {
     @FindBy(xpath = "//*[contains(text(),'Continue')]")
     private WebElement continueBtn;
 
+    @FindBy(id = "input-email")
+    private WebElement emailField;
+
+    @FindBy(id = "input-password")
+    private WebElement passwordField;
+
+    @FindBy(xpath = "//input[@value='Login']")
+    private WebElement loginBtn;
+
     public LoginPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(this.driver, this);
