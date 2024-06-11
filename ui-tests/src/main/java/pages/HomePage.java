@@ -9,8 +9,6 @@ public class HomePage extends AbstractPage {
     @FindBy(xpath = "//*[@id='widget-navbar-217834']//*[contains(text(),'My account')]")
     private WebElement myAccountBtn;
 
-
-
     public HomePage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(this.driver, this);

@@ -16,7 +16,7 @@
         <maven.compiler.target>16</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <selenium.version>3.141.59</selenium.version>
-        <bonigarcia.version>5.0.2</bonigarcia.version>
+        <bonigarcia.version>5.8.0</bonigarcia.version>
     </properties>
 
     <dependencies>
