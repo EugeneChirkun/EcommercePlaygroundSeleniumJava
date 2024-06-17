@@ -9,6 +9,10 @@ public class MyAccountPage extends AbstractPage{
     @FindBy(xpath = "//i[contains(@class,'fa-user-edit')]")
     private WebElement editAccountInfoBtn;
 
+    public EditAccountInfoPage openProfileInfoEditor() {
+        editAccountInfoBtn.click();
+        return new EditAccountInfoPage(driver);
+    }
     public MyAccountPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(this.driver, this);
@@ -16,7 +20,7 @@ public class MyAccountPage extends AbstractPage{
 
     @Override
     public MyAccountPage openPage() {
-        driver.navigate().to(ProjectData.HOME_PAGE.getUrl());
+        driver.navigate().to(ProjectData.MY_ACCOUNT_PAGE.getUrl());
         return this;
     }
 
