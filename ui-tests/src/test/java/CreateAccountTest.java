@@ -1,3 +1,4 @@
+import lombok.extern.log4j.Log4j2;
 import model.User;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -7,17 +8,18 @@ import pages.EditAccountInfoPage;
 import pages.LoginPage;
 import pages.MyAccountPage;
 
+@Log4j2
 public class CreateAccountTest extends BaseTest {
 
     @Test()
-    public void createNewAccountHappyPath() throws InterruptedException {
+    public void createNewAccountHappyPath() {
         User user = new User();
         String accountCreatedMessage = new LoginPage(driver).openPage().continueToCustomerRegistration().fillRegistrationFields(user).agreePrivacyPolicy().clickContinueBtn().accountCreatedMessage();
         Assert.assertEquals("Your Account Has Been Created!", accountCreatedMessage.trim(), "Expected and actual messages are not equals");
     }
 
     @Test()
-    public void createNewAccountAndLogin() throws InterruptedException {
+    public void createNewAccountAndLogin() {
         User user = new User();
         AccountCreatedPage accountCreatedPage = new LoginPage(driver).openPage().continueToCustomerRegistration().fillRegistrationFields(user).agreePrivacyPolicy().clickContinueBtn();
 

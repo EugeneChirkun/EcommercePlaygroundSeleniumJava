@@ -1,10 +1,12 @@
 package pages;
 
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+@Log4j2
 public class AccountCreatedPage extends AbstractPage {
     @FindBy(xpath = "//*[contains(text(),'Continue')]")
     private WebElement continueBtn;
@@ -17,6 +19,7 @@ public class AccountCreatedPage extends AbstractPage {
     }
 
     public String accountCreatedMessage() {
+        log.info("---> Account successfully created with message " + successMessage.getText());
         return successMessage.getText();
     }
 
